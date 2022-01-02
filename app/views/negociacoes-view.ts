@@ -1,4 +1,5 @@
 import { Negociacoes } from "../models/negociacoes.js";
+import { View } from "./view.js";
 
 /**
  * <td>${new Intl.DateTimeFormat().format(negociacao.data)}</td>
@@ -7,12 +8,7 @@ import { Negociacoes } from "../models/negociacoes.js";
  * chamando seu método estático DateTimeFormat, como não passamos parâmetro ele vai adotar a localidade 
  * padrão do navegador que o usuário está utilizando. Em format() dizemos o que queremos que seja formatado.
  */
-export class NegociacoesView {
-
-  private elemento: HTMLLIElement;
-  constructor(selector: string) {
-    this.elemento = document.querySelector(selector);
-  }
+export class NegociacoesView extends View {
 
   template(model: Negociacoes): string {
     return `
