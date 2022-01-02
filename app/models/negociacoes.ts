@@ -5,13 +5,15 @@ import { Negociacao } from "./negociacao.js";
  * ReadonlyArray<Negociacao> é o mesmo que escrever readonly Negociacao[]
  */
 export class Negociacoes {
+  
   private negociacoes: Negociacao[] = [];
-
-  adiciona(negociacao: Negociacao) {
+  
+  public adiciona(negociacao: Negociacao) {
     this.negociacoes.push(negociacao);
   }
-
-  lista(): readonly Negociacao[] {
+  
+  public lista(): readonly Negociacao[] {
     return this.negociacoes
   }
+  
 }
