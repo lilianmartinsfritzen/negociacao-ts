@@ -8,7 +8,7 @@ import { View } from "./view.js";
  * chamando seu método estático DateTimeFormat, como não passamos parâmetro ele vai adotar a localidade 
  * padrão do navegador que o usuário está utilizando. Em format() dizemos o que queremos que seja formatado.
  */
-export class NegociacoesView extends View {
+export class NegociacoesView extends View<Negociacoes> {
 
   template(model: Negociacoes): string {
     return `
@@ -33,11 +33,5 @@ export class NegociacoesView extends View {
         </thead>
       </table>
     `
-  }
-
-  update(model: Negociacoes): void {
-    const template = this.template(model);
-    console.log(template);
-    this.elemento.innerHTML = template;
   }
 }
