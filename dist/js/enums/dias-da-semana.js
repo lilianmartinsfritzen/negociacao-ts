@@ -1,7 +1,3 @@
-/**
- * Apesar do enum atribuir valores a partir de 0 de forma padrão, é interessante atribuir manualmente
- * a fim de evitar que qualquer alteração no posicionamento afete a aplicação.
- */
 export var DiasDaSemana;
 (function (DiasDaSemana) {
     DiasDaSemana[DiasDaSemana["DOMINGO"] = 0] = "DOMINGO";
