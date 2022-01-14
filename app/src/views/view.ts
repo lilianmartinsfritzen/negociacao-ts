@@ -1,9 +1,9 @@
 export abstract class View<T> {
   
   protected elemento: HTMLElement;
-  private escape = false;
+  private escapar = false;
 
-  constructor(selector: string, escape?: boolean) {
+  constructor(selector: string, escapar?: boolean) {
     const elemento = document.querySelector(selector);
     if (elemento) {
       this.elemento = elemento as HTMLElement;
@@ -11,14 +11,14 @@ export abstract class View<T> {
       throw Error(`Seletor ${selector} não existe no DOM. Verifique.`)
     }
     
-    if (escape) {
-      this.escape = escape;
+    if (escapar) {
+      this.escapar = escapar;
     }
   }
   
   public update(model: T): void {
     let template = this.template(model);
-    if (this.escape) {
+    if (this.escapar) {
       template = template.replace(/<script>[\s\S]*?<\/script>/, '');
     }
     this.elemento.innerHTML = template;
