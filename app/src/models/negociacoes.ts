@@ -5,7 +5,7 @@ import { Negociacao } from "./negociacao.js";
  * Array<Negociacao> é o mesmo que escrever Negociacao[]
  * ReadonlyArray<Negociacao> é o mesmo que escrever readonly Negociacao[]
  */
-export class Negociacoes extends Imprimivel {
+export class Negociacoes implements Imprimivel {
   
   private negociacoes: Negociacao[] = [];
   
